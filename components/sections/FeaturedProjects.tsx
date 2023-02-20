@@ -57,6 +57,7 @@ const useStyles = createStyles((theme) => ({
 //   description: React.ReactNode;
 // }
 interface ProjectData {
+  order: number
   image: string;
   title: string;
   country: string;
@@ -75,7 +76,7 @@ export function FeaturesImages({ data }: FeaturesImagesProps) {
   const { classes } = useStyles();
 
   const projects = data.map((item: ProjectData) => (
-    <div className={classes.item} key={item.image}>
+    <div className={classes.item} key={item.order}>
       <ProjectCard {...item} />
     </div>
   ));
