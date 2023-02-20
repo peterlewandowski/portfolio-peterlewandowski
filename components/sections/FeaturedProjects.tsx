@@ -1,5 +1,6 @@
-import { Image, Text, Container, ThemeIcon, Title, SimpleGrid, createStyles } from '@mantine/core';
+import { Text, Container, SimpleGrid, createStyles } from '@mantine/core';
 // import IMAGES from './images';
+import { BadgeCard as ProjectCard } from './Projects';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -24,7 +25,7 @@ const useStyles = createStyles((theme) => ({
     textAlign: 'center',
     textTransform: 'uppercase',
     fontWeight: 800,
-    fontSize: theme.fontSizes.sm,
+    fontSize: theme.fontSizes.xl,
     color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
     letterSpacing: 0.5,
   },
@@ -50,57 +51,46 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface FeatureImage {
+// interface FeatureImage {
+//   image: string;
+//   title: React.ReactNode;
+//   description: React.ReactNode;
+// }
+interface ProjectData {
   image: string;
-  title: React.ReactNode;
-  description: React.ReactNode;
+  title: string;
+  country: string;
+  description: string;
+  badges: {
+    emoji: string;
+    label: string;
+  }[];
 }
 
 interface FeaturesImagesProps {
-  supTitle: React.ReactNode;
-  description: React.ReactNode;
-  data: FeatureImage[];
+  data: ProjectData[];
 }
 
-export function FeaturesImages({ supTitle, description, data }: FeaturesImagesProps) {
+export function FeaturesImages({ data }: FeaturesImagesProps) {
   const { classes } = useStyles();
 
-  const items = data.map((item) => (
+  const projects = data.map((item: ProjectData) => (
     <div className={classes.item} key={item.image}>
-      {/* <ThemeIcon variant="light" className={classes.itemIcon} size={60} radius="md">
-        <Image src={IMAGES[item.image]} />
-      </ThemeIcon> */}
-
-      <div>
-        <Text weight={700} size="lg" className={classes.itemTitle}>
-          {item.title}
-        </Text>
-        <Text color="dimmed">{item.description}</Text>
-      </div>
+      <ProjectCard {...item} />
     </div>
   ));
 
   return (
-    <Container size={700} className={classes.wrapper}>
-      <Text className={classes.supTitle}>{supTitle}</Text>
-
-      <Title className={classes.title} order={2}>
-        PharmLand is <span className={classes.highlight}>not</span> just for pharmacists
-      </Title>
-
-      <Container size={660} p={0}>
-        <Text color="dimmed" className={classes.description}>
-          {description}
-        </Text>
-      </Container>
+    <Container size={1000} className={classes.wrapper}>
+      <Text className={classes.supTitle}>Featured Projects</Text>
 
       <SimpleGrid
-        cols={2}
+        cols={3}
         spacing={50}
-        breakpoints={[{ maxWidth: 550, cols: 1, spacing: 40 }]}
+        breakpoints={[{ maxWidth: 700, cols: 1, spacing: 40 }]}
         style={{ marginTop: 30 }}
       >
-        {items}
+        {projects}
       </SimpleGrid>
     </Container>
   );
