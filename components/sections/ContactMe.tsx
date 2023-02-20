@@ -1,5 +1,5 @@
-import { createStyles, ThemeIcon, Text, Box, Stack, Container } from '@mantine/core';
-import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons';
+import { createStyles, ThemeIcon, Text, Box, Container, Title, Group, Anchor } from '@mantine/core';
+import { IconBrandLinkedin, IconBrandGithub } from '@tabler/icons';
 
 type ContactIconVariant = 'white' | 'gradient';
 
@@ -13,7 +13,6 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
     alignItems: 'center',
     color: theme.white,
   },
-
   icon: {
     marginRight: theme.spacing.md,
     backgroundImage:
@@ -66,7 +65,9 @@ function ContactIcon({
         <Text size="xs" className={classes.title}>
           {title}
         </Text>
-        <Text className={classes.description}>{description}</Text>
+        <Anchor href={`https://${description}`} target="_blank" className={classes.description}>
+          {description}
+        </Anchor>
       </div>
     </div>
   );
@@ -78,41 +79,37 @@ interface ContactIconsListProps {
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'hello@mantine.dev', icon: IconAt },
-  { title: 'Phone', description: '+49 (800) 335 35 35', icon: IconPhone },
-  { title: 'Address', description: '844 Morris Park avenue', icon: IconMapPin },
-  { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: IconSun },
+  {
+    title: 'LinkedIn',
+    description: 'linkedin.com/in/peterlewandowski2010',
+    icon: IconBrandLinkedin,
+  },
+  { title: 'Github', description: 'github.com/peterlewandowski', icon: IconBrandGithub },
 ];
 
 export function ContactIconsList({ data = MOCKDATA, variant }: ContactIconsListProps) {
   const items = data.map((item, index) => <ContactIcon key={index} variant={variant} {...item} />);
-  return <Stack>{items}</Stack>;
+  return <Group>{items}</Group>;
 }
 
 export function ContactIcons() {
   return (
-    <Container>
-      {/* <Box
-        sx={(theme) => ({
-          padding: theme.spacing.xl,
-          borderRadius: theme.radius.md,
-          backgroundColor: theme.white,
-        })}
-      >
-        <ContactIconsList />
-      </Box> */}
+    <div id="contact">
+      <Container>
+        <Title>My Links</Title>
 
-      <Box
-        sx={(theme) => ({
-          padding: theme.spacing.xl,
-          borderRadius: theme.radius.md,
-          backgroundImage: `linear-gradient(135deg, ${theme.colors[theme.primaryColor][6]} 0%, ${
-            theme.colors[theme.primaryColor][4]
-          } 100%)`,
-        })}
-      >
-        <ContactIconsList variant="white" />
-      </Box>
-    </Container>
+        <Box
+          sx={(theme) => ({
+            padding: theme.spacing.xl,
+            borderRadius: theme.radius.md,
+            backgroundImage: `linear-gradient(135deg, ${theme.colors[theme.primaryColor][6]} 0%, ${
+              theme.colors[theme.primaryColor][4]
+            } 100%)`,
+          })}
+        >
+          <ContactIconsList variant="white" />
+        </Box>
+      </Container>
+    </div>
   );
 }
