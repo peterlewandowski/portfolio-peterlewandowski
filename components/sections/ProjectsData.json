@@ -1,85 +1,43 @@
 [
   {
-    "image": "https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    "title": "Verudela Beach",
-    "country": "Croatia",
-    "description": "Completely renovated for the season 2020, Arena Verudela Bech Apartments are fully equipped and modernly furnished 4-star self-service apartments located on the Adriatic coastline by one of the most beautiful beaches in Pula.",
+    "order": 1,
+    "image": "https://github.com/peterlewandowski/easyfi-project-web/raw/main/easyfi-getstarted.gif",
+    "title": "easyFi",
+    "country": "Web App",
+    "description": "This project was built to help users get started with investing. easyFi application makes it possible to create your own simple investment plans.",
     "badges": [
       {
-        "emoji": "☀️",
-        "label": "Sunny weather"
+        "emoji": "🏔",
+        "label": "Investing"
       },
       {
-        "emoji": "🦓",
-        "label": "Onsite zoo"
+        "emoji": "📈",
+        "label": "Financial Markets"
       },
       {
-        "emoji": "🌊",
-        "label": "Sea"
-      },
-      {
-        "emoji": "🌲",
-        "label": "Nature"
-      },
-      {
-        "emoji": "🤽",
-        "label": "Water sports"
+        "emoji": "💸",
+        "label": "#getcurrency"
       }
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    "title": "Verudela Beach",
-    "country": "Croatia",
-    "description": "Completely renovated for the season 2020, Arena Verudela Bech Apartments are fully equipped and modernly furnished 4-star self-service apartments located on the Adriatic coastline by one of the most beautiful beaches in Pula.",
+    "order": 2,
+    "image": "https://user-images.githubusercontent.com/96852364/220191773-5be62ad3-5255-4c3f-a86f-8b3ca8caeada.png",
+    "title": "TechThanks",
+    "country": "Web App",
+    "description": "Thank Your Mentors. This project was built over 24 hours during the VentureMiami hackathon in June 2022. It won 2nd place in the NEAR blockchain implementation category.",
     "badges": [
       {
         "emoji": "☀️",
-        "label": "Sunny weather"
+        "label": "Sending Thank You's"
       },
       {
-        "emoji": "🦓",
-        "label": "Onsite zoo"
+        "emoji": "🧱",
+        "label": "Blockchain tech"
       },
       {
-        "emoji": "🌊",
-        "label": "Sea"
-      },
-      {
-        "emoji": "🌲",
-        "label": "Nature"
-      },
-      {
-        "emoji": "🤽",
-        "label": "Water sports"
-      }
-    ]
-  },
-  {
-    "image": "https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    "title": "Verudela Beach",
-    "country": "Croatia",
-    "description": "Completely renovated for the season 2020, Arena Verudela Bech Apartments are fully equipped and modernly furnished 4-star self-service apartments located on the Adriatic coastline by one of the most beautiful beaches in Pula.",
-    "badges": [
-      {
-        "emoji": "☀️",
-        "label": "Sunny weather"
-      },
-      {
-        "emoji": "🦓",
-        "label": "Onsite zoo"
-      },
-      {
-        "emoji": "🌊",
-        "label": "Sea"
-      },
-      {
-        "emoji": "🌲",
-        "label": "Nature"
-      },
-      {
-        "emoji": "🤽",
-        "label": "Water sports"
+        "emoji": "😴",
+        "label": "#teamnosleep"
       }
     ]
   }
