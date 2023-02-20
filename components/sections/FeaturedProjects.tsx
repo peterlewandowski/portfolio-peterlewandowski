@@ -5,7 +5,7 @@ import { BadgeCard as ProjectCard } from './Projects';
 const useStyles = createStyles((theme) => ({
   wrapper: {
     paddingTop: 80,
-    paddingBottom: 50,
+    paddingBottom: 80,
   },
 
   item: {
@@ -81,17 +81,19 @@ export function FeaturesImages({ data }: FeaturesImagesProps) {
   ));
 
   return (
-    <Container size={1000} className={classes.wrapper}>
-      <Text className={classes.supTitle}>Featured Projects</Text>
+    <div id="projects">
+      <Container size={1000} className={classes.wrapper}>
+        <Text className={classes.supTitle}>Featured Projects</Text>
 
-      <SimpleGrid
-        cols={3}
-        spacing={50}
-        breakpoints={[{ maxWidth: 700, cols: 1, spacing: 40 }]}
-        style={{ marginTop: 30 }}
-      >
-        {projects}
-      </SimpleGrid>
-    </Container>
+        <SimpleGrid
+          cols={3}
+          spacing={50}
+          breakpoints={[{ maxWidth: 700, cols: 1, spacing: 40 }]}
+          style={{ marginTop: 30 }}
+        >
+          {projects}
+        </SimpleGrid>
+      </Container>
+    </div>
   );
 }

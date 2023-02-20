@@ -1,15 +1,8 @@
-import {
-  createStyles,
-  SimpleGrid,
-  Text,
-  ThemeIcon,
-  Grid,
-  Col,
-  Container,
-} from '@mantine/core';
+import { createStyles, SimpleGrid, Text, ThemeIcon, Grid, Col, Container } from '@mantine/core';
 import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
+  container: { paddingTop: 40 },
   wrapper: {
     padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
   },
@@ -38,14 +31,12 @@ const features = [
   {
     icon: IconCircleDotted,
     title: 'MongoDB',
-    description:
-      'The document databases in Mongo have been a staple in my recent projects.',
+    description: 'The document databases in Mongo have been a staple in my recent projects.',
   },
   {
     icon: IconFlame,
     title: 'Express',
-    description:
-      'When it comes to backend, RestAPIs in Express have been my jam.',
+    description: 'When it comes to backend, RestAPIs in Express have been my jam.',
   },
 ];
 
@@ -72,16 +63,18 @@ export function FeaturesTitle() {
   ));
 
   return (
-    <Container>
-      <div className={classes.wrapper}>
-        <Grid gutter={80}>
-          <Col span={12} md={12}>
-            <SimpleGrid cols={4} spacing={30} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
-              {items}
-            </SimpleGrid>
-          </Col>
-        </Grid>
-      </div>
-    </Container>
+    <div id="tech" className={classes.container}>
+      <Container>
+        <div className={classes.wrapper}>
+          <Grid gutter={80}>
+            <Col span={12} md={12}>
+              <SimpleGrid cols={4} spacing={30} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
+                {items}
+              </SimpleGrid>
+            </Col>
+          </Grid>
+        </div>
+      </Container>
+    </div>
   );
 }
