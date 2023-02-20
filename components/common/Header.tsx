@@ -3,6 +3,7 @@ import { createStyles, Header, Group, ActionIcon, Container, Burger } from '@man
 import { useDisclosure } from '@mantine/hooks';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
 import { MantineLogo } from '@mantine/ds';
+import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -65,7 +66,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface Link {
-  link: string; label: string
+  link: string;
+  label: string;
 }
 
 interface HeaderMiddleProps {
@@ -101,7 +103,7 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
 
         <MantineLogo size={28} />
 
-        <Group spacing={0} className={classes.social} position="right" noWrap>
+        <Group spacing={5} className={classes.social} position="right" noWrap>
           <ActionIcon size="lg">
             <IconBrandTwitter size={18} stroke={1.5} />
           </ActionIcon>
@@ -111,6 +113,7 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
           <ActionIcon size="lg">
             <IconBrandInstagram size={18} stroke={1.5} />
           </ActionIcon>
+          <ColorSchemeToggle />
         </Group>
       </Container>
     </Header>
