@@ -36,7 +36,7 @@ const features = [
   {
     icon: IconFlame,
     title: 'Express',
-    description: 'When it comes to backend, RestAPIs in Express have been my jam.',
+    description: 'When it comes to backend, RestAPIs in Express are the bees knees.',
   },
 ];
 
