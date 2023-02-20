@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { createStyles, Header, Group, ActionIcon, Container, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
-import { MantineLogo } from '@mantine/ds';
+import { IconBrandGithub, IconBrandLinkedin, IconBrandMedium } from '@tabler/icons';
 import { ColorSchemeToggle } from './ColorSchemeToggle';
 
 const useStyles = createStyles((theme) => ({
+  header: {
+    position: 'sticky',
+    top: 0,
+    zIndex: 2,
+  },
   inner: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -18,7 +22,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   links: {
-    width: 260,
+    width: 'auto',
 
     [theme.fn.smallerThan('sm')]: {
       display: 'none',
@@ -66,6 +70,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface Link {
+  id: string;
   link: string;
   label: string;
 }
@@ -79,6 +84,14 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
+  const handleScroll = (id: string) => {
+    document.getElementById(`${id}`)!.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSocialLink = (link: string) => {
+    window.open(link);
+  };
+
   const items = links.map((link) => (
     <a
       key={link.label}
@@ -87,6 +100,7 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+        handleScroll(link.id);
       }}
     >
       {link.label}
@@ -94,28 +108,40 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
   ));
 
   return (
-    <Header height={56} mb={120}>
-      <Container className={classes.inner}>
-        <Burger opened={opened} onClick={toggle} size="sm" className={classes.burger} />
-        <Group className={classes.links} spacing={5}>
-          {items}
-        </Group>
+    <div id="header" className={classes.header}>
+      <Header height={56} mb={0}>
+        <Container className={classes.inner}>
+          <Burger opened={opened} onClick={toggle} size="sm" className={classes.burger} />
+          <Group className={classes.links} spacing={5}>
+            {items}
+          </Group>
 
-        <MantineLogo size={28} />
-
-        <Group spacing={5} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandInstagram size={18} stroke={1.5} />
-          </ActionIcon>
-          <ColorSchemeToggle />
-        </Group>
-      </Container>
-    </Header>
+          <Group spacing={5} className={classes.social} position="right" noWrap>
+            <ActionIcon size="lg">
+              <IconBrandGithub
+                size={50}
+                stroke={1.5}
+                onClick={() => handleSocialLink('https://github.com/peterlewandowski')}
+              />
+            </ActionIcon>
+            <ActionIcon size="lg">
+              <IconBrandLinkedin
+                size={50}
+                stroke={1.5}
+                onClick={() => handleSocialLink('https://www.linkedin.com/in/peterlewandowski2010/')}
+              />
+            </ActionIcon>
+            <ActionIcon size="lg">
+              <IconBrandMedium
+                size={50}
+                stroke={1.5}
+                onClick={() => handleSocialLink('https://medium.com/@peter-lewandowski')}
+              />
+            </ActionIcon>
+            <ColorSchemeToggle />
+          </Group>
+        </Container>
+      </Header>
+    </div>
   );
 }

@@ -1,14 +1,22 @@
 [
   {
-    "link": "/about",
+    "id": "home",
+    "link": "/home",
     "label": "Home"
   },
   {
-    "link": "/learn",
-    "label": "Features"
+    "id": "tech",
+    "link": "/tech",
+    "label": "Tech Stack"
   },
   {
-    "link": "/pricing",
-    "label": "Pricing"
+    "id": "projects",
+    "link": "/projects",
+    "label": "Projects"
+  },
+  {
+    "id": "contact",
+    "link": "/contact",
+    "label": "Contact"
   }
 ]
