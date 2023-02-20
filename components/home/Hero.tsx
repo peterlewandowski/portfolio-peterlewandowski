@@ -7,6 +7,7 @@ const useStyles = createStyles((theme) => ({
       'url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    paddingBottom: 150,
   },
 
   container: {
@@ -28,7 +29,7 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: theme.white,
     fontSize: 60,
-    fontWeight: 900,
+    fontWeight: 800,
     lineHeight: 1.1,
 
     [theme.fn.smallerThan('sm')]: {
@@ -38,6 +39,22 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan('xs')]: {
       fontSize: 28,
+      lineHeight: 1.3,
+    },
+  },
+  subtitle: {
+    color: theme.white,
+    fontSize: 40,
+    fontWeight: 800,
+    lineHeight: 1.1,
+
+    [theme.fn.smallerThan('sm')]: {
+      fontSize: 20,
+      lineHeight: 1.2,
+    },
+
+    [theme.fn.smallerThan('xs')]: {
+      fontSize: 14,
       lineHeight: 1.3,
     },
   },
@@ -63,22 +80,30 @@ const useStyles = createStyles((theme) => ({
 
 export function HeroContentLeft() {
   const { classes } = useStyles();
-
+  const handleGetStarted = () => {
+    document.getElementById('main')!.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
-    <div className={classes.hero}>
+    <div id="home" className={classes.hero}>
       <Overlay
         gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 40%)"
         opacity={1}
         zIndex={0}
       />
       <Container className={classes.container}>
-        <Title className={classes.title}>A fully featured React components library</Title>
+        <Title className={classes.subtitle}>Hi there 🖖</Title>
+        <Title className={classes.title}>I&rsquo;m Peter Lewandowski</Title>
         <Text className={classes.description} size="xl" mt="xl">
-          Build fully functional accessible web applications faster than ever – Mantine includes
-          more than 120 customizable components and hooks to cover you in any situation
+          Building full-stack projects is my jam!
         </Text>
 
-        <Button variant="gradient" size="xl" radius="xl" className={classes.control}>
+        <Button
+          variant="gradient"
+          size="xl"
+          radius="xl"
+          className={classes.control}
+          onClick={handleGetStarted}
+        >
           Get started
         </Button>
       </Container>
