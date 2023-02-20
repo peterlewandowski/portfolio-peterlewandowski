@@ -1,4 +1,4 @@
-import { createStyles, ThemeIcon, Text, Box, Container, Title, Group, Anchor } from '@mantine/core';
+import { createStyles, ThemeIcon, Text, Box, Container, Group, Anchor } from '@mantine/core';
 import { IconBrandLinkedin, IconBrandGithub } from '@tabler/icons';
 
 type ContactIconVariant = 'white' | 'gradient';
@@ -96,7 +96,7 @@ export function ContactIcons() {
   return (
     <div id="contact">
       <Container>
-        <Title>My Links</Title>
+        {/* <Title>My Links</Title> */}
 
         <Box
           sx={(theme) => ({
