@@ -1,12 +1,10 @@
-import { HeroContentLeft as Hero } from '../components/home/Hero';
-
-import Main from '../components/home/Main';
+import * as home from '../components/layout/home';
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Main />
+      <home.Hero />
+      <home.Main />
     </>
   );
 }

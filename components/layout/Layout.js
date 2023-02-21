@@ -1,15 +1,15 @@
-import links from '../common/HeaderLinks.json';
-import data from '../common/FooterLinks.json';
-import { HeaderMiddle as Header } from '../common/Header';
-import { FooterLinks as Footer } from '../common/Footer';
+import * as common from './common'
+
+import data from './common/FooterLinks.json';
+import links from './common/HeaderLinks.json';
 
 export default function Layout ({children}) {
 
     return (
         <>
-        <Header links={links}/>
+        <common.Header links={links}/>
         <main>{children}</main>
-        <Footer data={data} />
+        <common.Footer data={data} />
         </>
     )
 }
