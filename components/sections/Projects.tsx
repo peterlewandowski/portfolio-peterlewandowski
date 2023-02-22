@@ -101,7 +101,10 @@ export function BadgeCard({ image, title, description, type, badges, links }: Ba
             <Text size="lg" weight={500}>
               {title}
             </Text>
-            <Badge size="sm">{type}</Badge>
+            <div>
+              <Badge size="sm">{type}</Badge>
+              <Badge size="sm">❤️ {count}</Badge>
+            </div>
           </Group>
           <Text size="md" mt="xs">
             {description}
@@ -114,7 +117,6 @@ export function BadgeCard({ image, title, description, type, badges, links }: Ba
           </Text>
           <Group spacing={7} mt={5}>
             {features}
-            <Badge size="sm">❤️ {count}</Badge>
           </Group>
         </Card.Section>
 
