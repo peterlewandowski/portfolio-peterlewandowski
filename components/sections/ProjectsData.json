@@ -3,7 +3,7 @@
     "order": 1,
     "image": "https://github.com/peterlewandowski/easyfi-project-web/raw/main/easyfi-getstarted.gif",
     "title": "easyFi",
-    "country": "Web App",
+    "type": "Web App",
     "description": "This project was built to help users get started with investing. easyFi application makes it possible to create your own simple investment plans.",
     "badges": [
       {
@@ -18,13 +18,20 @@
         "emoji": "💸",
         "label": "#getcurrency"
       }
-    ]
+    ],
+    "links": {
+      "live": "https://easyfi.me/",
+      "repo": {
+        "front": "https://github.com/peterlewandowski/easyfi-project-web",
+        "api": "https://github.com/peterlewandowski/easyfi-project-api"
+      }
+    }
   },
   {
     "order": 2,
     "image": "https://user-images.githubusercontent.com/96852364/220191773-5be62ad3-5255-4c3f-a86f-8b3ca8caeada.png",
     "title": "TechThanks",
-    "country": "Web App",
+    "type": "Web App",
     "description": "Thank Your Mentors. This project was built over 24 hours during the VentureMiami hackathon in June 2022. It won 2nd place in the NEAR blockchain implementation category.",
     "badges": [
       {
@@ -39,6 +46,13 @@
         "emoji": "😴",
         "label": "#teamnosleep"
       }
-    ]
+    ],
+    "links": {
+      "live": "https://techthanks.com/",
+      "repo": {
+        "front": "https://github.com/peterlewandowski/tech-thanks/tree/main/tech-thanks",
+        "api": "https://github.com/peterlewandowski/tech-thanks/tree/main/backend"
+      }
+    }
   }
 ]

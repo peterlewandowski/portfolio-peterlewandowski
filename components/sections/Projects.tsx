@@ -9,7 +9,11 @@ import {
   ActionIcon,
   createStyles,
   Container,
+  Menu,
+  Stack,
+  Flex,
 } from '@mantine/core';
+import { useState } from 'react';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -34,21 +38,35 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.xs,
     fontWeight: 700,
   },
+  item: {
+    '&[data-hovered]': {
+      backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
+      color: theme.white,
+    },
+    '&[data-expanded]': {
+      variant: 'outline',
+    },
+  },
 }));
 
 interface BadgeCardProps {
   image: string;
   title: string;
-  country: string;
+  type: string;
   description: string;
   badges: {
     emoji: string;
     label: string;
   }[];
+  links: {
+    live: string;
+    repo: { front: string; api: string };
+  };
 }
 
-export function BadgeCard({ image, title, description, country, badges }: BadgeCardProps) {
+export function BadgeCard({ image, title, description, type, badges, links }: BadgeCardProps) {
   const { classes, theme } = useStyles();
+  const [count, setCount] = useState(0);
 
   const features = badges.map((badge) => (
     <Badge
@@ -60,21 +78,32 @@ export function BadgeCard({ image, title, description, country, badges }: BadgeC
     </Badge>
   ));
 
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+  // const decrementCount = () => {
+  //   setCount(count - 1);
+  // };
+
+  const handleLink = (link: string) => {
+    window.open(link);
+  };
+
   return (
     <Container>
       <Card withBorder radius="md" p="md" className={classes.card}>
         <Card.Section>
-          <Image src={image} alt={title} height={180} />
+          <Image src={image} alt={title} height={400} />
         </Card.Section>
 
-        <Card.Section className={classes.section} mt="md">
+        <Card.Section className={classes.section} mt="md" mih={150}>
           <Group position="apart">
             <Text size="lg" weight={500}>
               {title}
             </Text>
-            <Badge size="sm">{country}</Badge>
+            <Badge size="sm">{type}</Badge>
           </Group>
-          <Text size="sm" mt="xs">
+          <Text size="md" mt="xs">
             {description}
           </Text>
         </Card.Section>
@@ -85,17 +114,43 @@ export function BadgeCard({ image, title, description, country, badges }: BadgeC
           </Text>
           <Group spacing={7} mt={5}>
             {features}
+            <Badge size="sm">❤️ {count}</Badge>
           </Group>
         </Card.Section>
 
-        <Group mt="xs">
-          <Button radius="md" style={{ flex: 1 }}>
-            Show details
+        <Stack mih={180} m="xl" mt={40}>
+          <Button radius="md" style={{ flex: 1 }} onClick={() => handleLink(links.live)}>
+            &rdquo;Try Me&rdquo;
           </Button>
-          <ActionIcon variant="default" radius="md" size={36}>
-            <IconHeart size={18} className={classes.like} stroke={1.5} />
-          </ActionIcon>
-        </Group>
+          <Menu classNames={classes}>
+            <Menu.Target>
+              <Button variant="light" radius="md" style={{ flex: 1 }}>
+                Code Repository
+              </Button>
+            </Menu.Target>
+
+            <Menu.Dropdown>
+              {!links.repo.api ? (
+                <Menu.Item onClick={() => handleLink(links.repo.front)}>Frontend</Menu.Item>
+              ) : (
+                <>
+                  <Menu.Item onClick={() => handleLink(links.repo.front)}>Frontend</Menu.Item>
+                  <Menu.Item onClick={() => handleLink(links.repo.api)}>API</Menu.Item>
+                </>
+              )}
+            </Menu.Dropdown>
+          </Menu>
+          <Flex justify="center">
+            <ActionIcon variant="default" radius="md" size={36}>
+              <IconHeart
+                size={18}
+                className={classes.like}
+                stroke={1.5}
+                onClick={() => incrementCount()}
+              />
+            </ActionIcon>
+          </Flex>
+        </Stack>
       </Card>
     </Container>
   );

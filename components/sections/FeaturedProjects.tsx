@@ -57,15 +57,19 @@ const useStyles = createStyles((theme) => ({
 //   description: React.ReactNode;
 // }
 interface ProjectData {
-  order: number
+  order: number;
   image: string;
   title: string;
-  country: string;
+  type: string;
   description: string;
   badges: {
     emoji: string;
     label: string;
   }[];
+  links: {
+    live: string;
+    repo: { front: string; api: string };
+  };
 }
 
 interface FeaturesImagesProps {
@@ -83,11 +87,11 @@ export function FeaturesImages({ data }: FeaturesImagesProps) {
 
   return (
     <div id="projects">
-      <Container size={1000} className={classes.wrapper}>
+      <Container size="xl" className={classes.wrapper}>
         <Text className={classes.supTitle}>Featured Projects</Text>
 
         <SimpleGrid
-          cols={3}
+          cols={2}
           spacing={50}
           breakpoints={[{ maxWidth: 700, cols: 1, spacing: 40 }]}
           style={{ marginTop: 30 }}
