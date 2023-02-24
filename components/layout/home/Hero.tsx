@@ -104,7 +104,7 @@ export function HeroContentLeft() {
           className={classes.control}
           onClick={handleGetStarted}
         >
-          Get started
+          About Me
         </Button>
       </Container>
     </div>
