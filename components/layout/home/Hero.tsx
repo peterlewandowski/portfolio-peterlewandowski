@@ -104,15 +104,15 @@ export function HeroContentLeft() {
             Building full-stack projects is my jam!
           </Text>
 
-          <Button
-            variant="gradient"
-            size="xl"
-            radius="xl"
-            className={classes.control}
-            onClick={handleGetStarted}
-          >
-            Get started
-          </Button>
+        <Button
+          variant="gradient"
+          size="xl"
+          radius="xl"
+          className={classes.control}
+          onClick={handleGetStarted}
+        >
+          About Me
+        </Button>
       </Container>
     </div>
   );

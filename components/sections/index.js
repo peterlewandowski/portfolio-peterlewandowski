@@ -1,4 +1,5 @@
-export { ContactIcons as ContactMe } from './ContactMe';
+export { FeaturesCards as AboutMe } from './AboutMe'
+export { FeaturesTitle as TechStack } from './TechStack';
 export { FeaturesImages as FeaturedProjects } from './FeaturedProjects';
 export { BadgeCard as Projects } from './Projects';
-export { FeaturesTitle as TechStack } from './TechStack';
+export { ContactIcons as ContactMe } from './ContactMe';
