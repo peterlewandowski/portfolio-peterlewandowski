@@ -60,7 +60,7 @@ export function FeaturesCards() {
             Building Solutions
           </Title>
 
-          <Text color="dimmed" className={classes.description} align="center" mt="md">
+          <Text className={classes.description} align="center" mt="md">
             As a Financial Professional at an Investment Banking firm, I worked with over 1500
             investment advisors, educating on how to utilize technology to better serve their
             clients needs, resulting in over $100 million in annual revenue in my first three years.
