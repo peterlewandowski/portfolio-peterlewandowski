@@ -1,10 +1,30 @@
-import { createStyles, SimpleGrid, Text, ThemeIcon, Grid, Col, Container } from '@mantine/core';
-import { IconBrandReact, IconFlame, IconBrandMongodb, IconBrandTypescript } from '@tabler/icons';
+import {
+  createStyles,
+  SimpleGrid,
+  Text,
+  Container,
+  Card,
+} from '@mantine/core';
+import { IconBrandReact, IconFlame, IconBrandTypescript } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
-  container: { paddingTop: 40 },
   wrapper: {
     padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
+  },
+  card: {
+    border: `1px solid ${
+      theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1]
+    }`,
+  },
+  cardTitle: {
+    '&::after': {
+      content: '""',
+      display: 'block',
+      backgroundColor: theme.fn.primaryColor(),
+      width: 45,
+      height: 2,
+      marginTop: theme.spacing.sm,
+    },
   },
 
   title: {
@@ -29,23 +49,18 @@ const features = [
     description: 'I really enjoy JavaScript and have added TypeScript to my recent projects',
   },
   {
-    icon: IconBrandMongodb,
-    title: 'MongoDB',
-    description: 'The document databases in Mongo have been a staple in my recent projects.',
-  },
-  {
     icon: IconFlame,
-    title: 'Express',
+    title: 'NodeJS + Express',
     description: 'When it comes to backend, RestAPIs in Express are the bees knees.',
   },
 ];
 
 export function FeaturesTitle() {
-  const { classes } = useStyles();
+  const { classes, theme } = useStyles();
 
   const items = features.map((feature) => (
     <div key={feature.title}>
-      <ThemeIcon
+      {/* <ThemeIcon
         size={100}
         radius="md"
         variant="gradient"
@@ -58,22 +73,25 @@ export function FeaturesTitle() {
       </Text>
       <Text color="dimmed" size="sm">
         {feature.description}
-      </Text>
+      </Text> */}
+      <Card key={feature.title} shadow="md" radius="md" className={classes.card} p="xl">
+        <feature.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
+        <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
+          {feature.title}
+        </Text>
+        <Text size="md" mt="sm">
+          {feature.description}
+        </Text>
+      </Card>
     </div>
   ));
 
   return (
-    <div id="tech" className={classes.container}>
+    <div id="tech">
       <Container size="lg">
-        <div className={classes.wrapper}>
-          <Grid gutter={80}>
-            <Col span={12} md={12}>
-              <SimpleGrid cols={4} spacing={30} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
-                {items}
-              </SimpleGrid>
-            </Col>
-          </Grid>
-        </div>
+        <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
+          {items}
+        </SimpleGrid>
       </Container>
     </div>
   );
