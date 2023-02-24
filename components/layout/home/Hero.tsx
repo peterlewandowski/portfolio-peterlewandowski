@@ -1,4 +1,11 @@
-import { createStyles, Overlay, Container, Title, Button, Text } from '@mantine/core';
+import {
+  createStyles,
+  Overlay,
+  Container,
+  Title,
+  Button,
+  Text,
+} from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   hero: {
@@ -91,21 +98,21 @@ export function HeroContentLeft() {
         zIndex={0}
       />
       <Container className={classes.container}>
-        <Title className={classes.subtitle}>Hi there 🖖</Title>
-        <Title className={classes.title}>I&rsquo;m Peter Lewandowski</Title>
-        <Text className={classes.description} size="xl" mt="xl">
-          Building full-stack projects is my jam!
-        </Text>
+          <Title className={classes.subtitle}>Hi there 🖖</Title>
+          <Title className={classes.title}>I&rsquo;m Peter Lewandowski</Title>
+          <Text className={classes.description} size="xl" mt="xl">
+            Building full-stack projects is my jam!
+          </Text>
 
-        <Button
-          variant="gradient"
-          size="xl"
-          radius="xl"
-          className={classes.control}
-          onClick={handleGetStarted}
-        >
-          Get started
-        </Button>
+          <Button
+            variant="gradient"
+            size="xl"
+            radius="xl"
+            className={classes.control}
+            onClick={handleGetStarted}
+          >
+            Get started
+          </Button>
       </Container>
     </div>
   );
