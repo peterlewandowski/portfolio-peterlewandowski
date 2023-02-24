@@ -1,5 +1,5 @@
 import { createStyles, SimpleGrid, Text, ThemeIcon, Grid, Col, Container } from '@mantine/core';
-import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from '@tabler/icons';
+import { IconBrandReact, IconFlame, IconBrandMongodb, IconBrandTypescript } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   container: { paddingTop: 40 },
@@ -19,17 +19,17 @@ const useStyles = createStyles((theme) => ({
 
 const features = [
   {
-    icon: IconReceiptOff,
+    icon: IconBrandReact,
     title: 'React',
     description: 'Currently focusing on building React applications',
   },
   {
-    icon: IconFileCode,
+    icon: IconBrandTypescript,
     title: 'TypeScript',
     description: 'I really enjoy JavaScript and have added TypeScript to my recent projects',
   },
   {
-    icon: IconCircleDotted,
+    icon: IconBrandMongodb,
     title: 'MongoDB',
     description: 'The document databases in Mongo have been a staple in my recent projects.',
   },
@@ -46,12 +46,12 @@ export function FeaturesTitle() {
   const items = features.map((feature) => (
     <div key={feature.title}>
       <ThemeIcon
-        size={44}
+        size={100}
         radius="md"
         variant="gradient"
         gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
       >
-        <feature.icon size={26} stroke={1.5} />
+        <feature.icon size={65} stroke={1} />
       </ThemeIcon>
       <Text size="lg" mt="sm" weight={500}>
         {feature.title}
@@ -64,7 +64,7 @@ export function FeaturesTitle() {
 
   return (
     <div id="tech" className={classes.container}>
-      <Container>
+      <Container size="lg">
         <div className={classes.wrapper}>
           <Grid gutter={80}>
             <Col span={12} md={12}>
