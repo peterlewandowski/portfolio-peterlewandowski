@@ -3,7 +3,6 @@ import Image from 'next/image';
 import photo from '../../assets/myPhoto.jpg';
 
 const useStyles = createStyles((theme) => ({
-  container: {},
   title: {
     fontSize: 34,
     fontWeight: 900,
@@ -53,9 +52,9 @@ export function FeaturesCards() {
   const { classes } = useStyles();
 
   return (
-    <Container className={classes.container} size="md" py={100}>
-      <Group>
-        <Stack>
+    <Container size="md" py="xl">
+      <Group position="center">
+        <Stack align="center" spacing="xl">
           <Title order={1} className={classes.title} align="center" mt="sm">
             Building Solutions
           </Title>
@@ -68,14 +67,14 @@ export function FeaturesCards() {
             their journey to become software engineers. I am excited to work and collaborate on
             projects that create impactful solutions in Fintech and beyond.
           </Text>
+          <Image
+            className={classes.image}
+            width={280}
+            height={400}
+            alt="Photo of author"
+            src={photo}
+          />
         </Stack>
-        <Image
-          className={classes.image}
-          width={280}
-          height={400}
-          alt="Photo of author"
-          src={photo}
-        />
       </Group>
     </Container>
   );
