@@ -60,20 +60,6 @@ export function FeaturesTitle() {
 
   const items = features.map((feature) => (
     <div key={feature.title}>
-      {/* <ThemeIcon
-        size={100}
-        radius="md"
-        variant="gradient"
-        gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
-      >
-        <feature.icon size={65} stroke={1} />
-      </ThemeIcon>
-      <Text size="lg" mt="sm" weight={500}>
-        {feature.title}
-      </Text>
-      <Text color="dimmed" size="sm">
-        {feature.description}
-      </Text> */}
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} p="xl">
         <feature.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
         <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
