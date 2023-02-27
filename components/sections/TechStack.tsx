@@ -4,6 +4,9 @@ import {
   Text,
   Container,
   Card,
+  Stack,
+  Group,
+  Center,
 } from '@mantine/core';
 import { IconBrandReact, IconFlame, IconBrandTypescript } from '@tabler/icons';
 
@@ -12,11 +15,18 @@ const useStyles = createStyles((theme) => ({
     padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
   },
   card: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+
     border: `1px solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1]
     }`,
   },
   cardTitle: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     '&::after': {
       content: '""',
       display: 'block',
@@ -61,13 +71,23 @@ export function FeaturesTitle() {
   const items = features.map((feature) => (
     <div key={feature.title}>
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} p="xl">
-        <feature.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
-        <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
-          {feature.title}
-        </Text>
-        <Text size="md" mt="sm">
-          {feature.description}
-        </Text>
+        <Group position="left">
+          <Stack spacing={0}>
+            <Center>
+              <feature.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
+            </Center>
+            <Center>
+              <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
+                {feature.title}
+              </Text>
+            </Center>
+            <Center>
+              <Text size="md" mt="sm" ta="center">
+                {feature.description}
+              </Text>
+            </Center>
+          </Stack>
+        </Group>
       </Card>
     </div>
   ));
