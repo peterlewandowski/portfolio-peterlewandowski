@@ -100,6 +100,8 @@ export function ContactIcons() {
 
         <Box
           sx={(theme) => ({
+            display: 'flex',
+            justifyContent: 'space-around',
             padding: theme.spacing.xl,
             borderRadius: theme.radius.md,
             backgroundImage: `linear-gradient(135deg, ${theme.colors[theme.primaryColor][6]} 0%, ${
