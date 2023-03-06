@@ -52,7 +52,7 @@ export function FeaturesCards() {
   const { classes } = useStyles();
 
   return (
-    <Container size="md" py="xl">
+    <Container size="md" py="xl" style={{ scrollMarginTop: '56px' }}>
       <Group position="center">
         <Stack align="center" spacing="xl">
           <Title order={1} className={classes.title} align="center" mt="sm">

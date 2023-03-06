@@ -4,8 +4,8 @@ import { BadgeCard as ProjectCard } from './Projects';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    paddingTop: 80,
-    paddingBottom: 80,
+    paddingTop: 50,
+    paddingBottom: 50,
   },
 
   item: {
@@ -86,7 +86,7 @@ export function FeaturesImages({ data }: FeaturesImagesProps) {
   ));
 
   return (
-    <div id="projects">
+    <div id="projects" style={{ scrollMarginTop: '56px' }}>
       <Container size="xl" className={classes.wrapper}>
         <Text className={classes.supTitle}>Featured Projects</Text>
 
