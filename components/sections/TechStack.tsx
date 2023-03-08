@@ -93,7 +93,7 @@ export function FeaturesTitle() {
   ));
 
   return (
-    <div id="tech" style={{ scrollMarginTop: '65px' }}>
+    <div style={{ scrollMarginTop: '65px' }}>
       <Container size="lg">
         <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
           {items}

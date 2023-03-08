@@ -1,4 +1,4 @@
-import { createStyles, Title, Text, Container, Group, Stack } from '@mantine/core';
+import { createStyles, Title, Text, Container, Group, Stack, Space } from '@mantine/core';
 import Image from 'next/image';
 import photo from '../../assets/myPhoto.jpg';
 
@@ -67,7 +67,10 @@ export function FeaturesCards() {
             their journey to become software engineers. I am excited to work and collaborate on
             projects that create impactful solutions in Fintech and beyond.
           </Text>
+          <Space h="md" />
           <Image
+            id="tech"
+            style={{ scrollMarginTop: '70px' }}
             className={classes.image}
             width={280}
             height={400}
