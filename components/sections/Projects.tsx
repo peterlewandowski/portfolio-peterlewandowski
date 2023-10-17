@@ -98,7 +98,7 @@ export function BadgeCard({ image, title, description, type, badges, links }: Ba
 
         <Card.Section className={classes.section} mt="md" mih={150}>
           <Group position="apart">
-            <Text size="lg" weight={500}>
+            <Text size="lg" weight={900}>
               {title}
             </Text>
             <div>

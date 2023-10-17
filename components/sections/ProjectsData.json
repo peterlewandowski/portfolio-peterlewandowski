@@ -1,29 +1,29 @@
 [
   {
     "order": 1,
-    "image": "https://github.com/peterlewandowski/easyfi-project-web/raw/main/easyfi-getstarted.gif",
-    "title": "easyFi",
-    "type": "Web App",
-    "description": "This project was built to help users get started with investing. easyFi application makes it possible to create your own simple investment plans.",
+    "image": "https://raw.githubusercontent.com/peterlewandowski/pl-portfolio-monorepo/main/apps/frontend-mentor/sunnyside-agency/public/sunnyside-agency-desktop-screenshot-full.png",
+    "title": "Sunnyside Agency",
+    "type": "Landing Page",
+    "description": "A high-performance landing page using Semantic HTML5, Flexbox, CSS Grid, React, Next.js, and Tailwind CSS",
     "badges": [
       {
-        "emoji": "🏔",
-        "label": "Investing"
+        "emoji": "💻",
+        "label": "React"
       },
       {
-        "emoji": "📈",
-        "label": "Financial Markets"
+        "emoji": "🎨",
+        "label": "Tailwind CSS"
       },
       {
-        "emoji": "💸",
-        "label": "#getcurrency"
+        "emoji": "🍒",
+        "label": "Cherries"
       }
     ],
     "links": {
-      "live": "https://easyfi.me/",
+      "live": "https://frontend-mentor-sunnyside-agency-kohl.vercel.app/",
       "repo": {
-        "front": "https://github.com/peterlewandowski/easyfi-project-web",
-        "api": "https://github.com/peterlewandowski/easyfi-project-api"
+        "front": "https://github.com/peterlewandowski/pl-portfolio-monorepo/tree/main/apps/frontend-mentor/sunnyside-agency",
+        "api": ""
       }
     }
   },
@@ -52,6 +52,34 @@
       "repo": {
         "front": "https://github.com/peterlewandowski/tech-thanks/tree/main/tech-thanks",
         "api": "https://github.com/peterlewandowski/tech-thanks/tree/main/backend"
+      }
+    }
+  },
+  {
+    "order": 3,
+    "image": "https://github.com/peterlewandowski/easyfi-project-web/raw/main/easyfi-getstarted.gif",
+    "title": "easyFi",
+    "type": "Web App",
+    "description": "This project was built to help users get started with investing. easyFi application makes it possible to create your own simple investment plans.",
+    "badges": [
+      {
+        "emoji": "🏔",
+        "label": "Investing"
+      },
+      {
+        "emoji": "📈",
+        "label": "Financial Markets"
+      },
+      {
+        "emoji": "💸",
+        "label": "#getcurrency"
+      }
+    ],
+    "links": {
+      "live": "https://easyfi.me/",
+      "repo": {
+        "front": "https://github.com/peterlewandowski/easyfi-project-web",
+        "api": "https://github.com/peterlewandowski/easyfi-project-api"
       }
     }
   }
