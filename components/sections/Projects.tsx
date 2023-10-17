@@ -13,7 +13,7 @@ import {
   Stack,
   Flex,
 } from '@mantine/core';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -68,6 +68,11 @@ export function BadgeCard({ image, title, description, type, badges, links }: Ba
   const { classes, theme } = useStyles();
   const [count, setCount] = useState(0);
 
+  useEffect(() => {
+    const randomInitialCountNumber = (() => Math.floor(Math.random() * 1000))();
+    setCount(randomInitialCountNumber);
+  }, []);
+
   const features = badges.map((badge) => (
     <Badge
       color={theme.colorScheme === 'dark' ? 'dark' : 'gray'}
@@ -81,9 +86,6 @@ export function BadgeCard({ image, title, description, type, badges, links }: Ba
   const incrementCount = () => {
     setCount(count + 1);
   };
-  // const decrementCount = () => {
-  //   setCount(count - 1);
-  // };
 
   const handleLink = (link: string) => {
     window.open(link);
