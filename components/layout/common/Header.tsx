@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { createStyles, Header, Group, ActionIcon, Container, Burger } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { createStyles, Header, Group, ActionIcon, Container } from '@mantine/core';
+// import { useDisclosure } from '@mantine/hooks';
 import { IconBrandGithub, IconBrandLinkedin, IconBrandMedium } from '@tabler/icons';
 import { ColorSchemeToggle } from './ColorSchemeToggle';
 
@@ -80,7 +80,7 @@ interface HeaderMiddleProps {
 }
 
 export function HeaderMiddle({ links }: HeaderMiddleProps) {
-  const [opened, { toggle }] = useDisclosure(false);
+  // const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
@@ -111,7 +111,7 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
     <div id="header" className={classes.header}>
       <Header height={56} mb={0}>
         <Container className={classes.inner}>
-          <Burger opened={opened} onClick={toggle} size="sm" className={classes.burger} />
+          {/* <Burger opened={opened} onClick={toggle} size="sm" className={classes.burger} /> */}
           <Group className={classes.links} spacing={5}>
             {items}
           </Group>
@@ -128,7 +128,9 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
               <IconBrandLinkedin
                 size={50}
                 stroke={1.5}
-                onClick={() => handleSocialLink('https://www.linkedin.com/in/peterlewandowski2010/')}
+                onClick={() =>
+                  handleSocialLink('https://www.linkedin.com/in/peterlewandowski2010/')
+                }
               />
             </ActionIcon>
             <ActionIcon size="lg">
