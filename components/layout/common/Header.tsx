@@ -34,7 +34,6 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan('sm')]: {
       width: 'auto',
-      marginLeft: 'auto',
     },
   },
 
@@ -140,8 +139,8 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
                 onClick={() => handleSocialLink('https://medium.com/@peter-lewandowski')}
               />
             </ActionIcon>
-            <ColorSchemeToggle />
           </Group>
+          <ColorSchemeToggle />
         </Container>
       </Header>
     </div>
